@@ -28,7 +28,7 @@ export class AppHome {
     return (
       <div class="mdc-card my-card">
         <div class="mdc-card__content my-card-content">
-          <mdc-textarea ref={el => (this.el = el)} value={this.text} rows={24} cols={48} />
+          <mdc-textarea ref={el => (this.el = el)} value={this.text} rows={24} cols={44} />
           <p>アンケート定義(編集可)</p>
           <mdc-button onClick={this.onClick}>Click me!</mdc-button>
         </div>

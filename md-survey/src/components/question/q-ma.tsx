@@ -1,4 +1,4 @@
-import { Component, h, Prop, State } from '@stencil/core';
+import { Component, h, Prop, State, Event, EventEmitter } from '@stencil/core';
 import { MA } from '../../shared/interface';
 
 @Component({
@@ -7,6 +7,7 @@ import { MA } from '../../shared/interface';
   shadow: false,
 })
 export class QMA {
+  @Event({ bubbles: true }) valid: EventEmitter<boolean>;
   @Prop() q: MA;
   @Prop() disabled = false;
   @State() c: boolean[];
@@ -29,6 +30,8 @@ export class QMA {
         this.c[i] = true;
         this.t[i] = a.text;
       });
+
+    this.validation();
   };
 
   onClick = (n: number) => {
@@ -37,6 +40,8 @@ export class QMA {
     this.c[n] = !this.c[n];
     this.c = [...this.c];
     this.setAnswer();
+
+    this.validation();
   };
 
   private setAnswer = () => {
@@ -45,6 +50,8 @@ export class QMA {
       if (c) this.q.answers.push({ value: i + 1, text: this.t[i] });
     });
   };
+
+  validation = () => this.valid.emit(this.q.min <= this.q.answers.length);
 
   render() {
     return (

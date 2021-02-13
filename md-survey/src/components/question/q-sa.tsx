@@ -1,4 +1,4 @@
-import { Component, h, Prop, State } from '@stencil/core';
+import { Component, h, Prop, State, Event, EventEmitter } from '@stencil/core';
 import { SA } from '../../shared/interface';
 
 @Component({
@@ -7,6 +7,7 @@ import { SA } from '../../shared/interface';
   shadow: false,
 })
 export class QSA {
+  @Event({ bubbles: true }) valid: EventEmitter<boolean>;
   @Prop() q: SA;
   @Prop() name: string;
   @Prop() disabled = false;
@@ -19,12 +20,16 @@ export class QSA {
   private init = () => {
     if (!this.q.answer) this.q.answer = { value: 0 };
     this.n = this.q.answer.value;
+    this.validation();
   };
 
   onRadio = (n: number) => {
     this.n = n;
     this.q.answer.value = this.n;
+    this.validation();
   };
+
+  validation = () => this.valid.emit(!this.q.require || !!this.n);
 
   render() {
     return (

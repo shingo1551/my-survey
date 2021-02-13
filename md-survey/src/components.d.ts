@@ -204,10 +204,12 @@ declare namespace LocalJSX {
     }
     interface QFa {
         "disabled"?: boolean;
+        "onValid"?: (event: CustomEvent<boolean>) => void;
         "q"?: FA;
     }
     interface QMa {
         "disabled"?: boolean;
+        "onValid"?: (event: CustomEvent<boolean>) => void;
         "q"?: MA;
     }
     interface QQuestion {
@@ -218,6 +220,7 @@ declare namespace LocalJSX {
     interface QSa {
         "disabled"?: boolean;
         "name"?: string;
+        "onValid"?: (event: CustomEvent<boolean>) => void;
         "q"?: SA;
     }
     interface IntrinsicElements {
