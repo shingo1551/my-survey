@@ -1,0 +1,30 @@
+{
+  "name": "use-stencil",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "update": "npm i ../md-survey",
+    "rollup": "rollup -c rollup.config.js",
+    "webpack": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.1.1",
+    "copy-webpack-plugin": "^7.0.0",
+    "rollup": "^2.38.4",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "webpack": "^5.18.0",
+    "webpack-cli": "^4.4.0"
+  },
+  "dependencies": {
+    "md-survey": "file:../md-survey",
+    "step3": "file:../md-survey"
+  }
+}
