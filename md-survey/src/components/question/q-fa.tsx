@@ -28,7 +28,7 @@ export class QFA {
     this.validation();
   };
 
-  validation = () => this.valid.emit(!this.q.require || !!this.t);
+  validation = () => this.valid.emit(!this.q.required || !!this.t);
 
   render() {
     const q = this.q;

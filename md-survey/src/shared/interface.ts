@@ -7,7 +7,7 @@ export type Question = FA | MA | SA;
 
 export interface FA {
   type: 'fa';
-  require: boolean;
+  required: boolean;
   html: string;
   placeholder: string;
   answer: { text: string };
@@ -15,7 +15,7 @@ export interface FA {
 
 export interface SA {
   type: 'sa';
-  require: boolean;
+  required: boolean;
   html: string;
   selections: Selection[];
   answer: { value: number; text?: string };

@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Host, Prop, State } from '@stencil/core';
 import { Question } from '../../shared/interface';
 
 @Component({
@@ -10,6 +10,27 @@ export class QQuestion {
   @Prop() question: Question;
   @Prop() name: string;
   @Prop() disabled = false;
+  @State() required: boolean;
+
+  componentWillRender() {
+    this.init();
+  }
+
+  private init = () => {
+    const q = this.question;
+
+    switch (q.type) {
+      case 'fa':
+        this.required = q.required;
+        break;
+      case 'sa':
+        this.required = q.required;
+        break;
+      case 'ma':
+        this.required = !!q.min;
+        break;
+    }
+  };
 
   Q = () => {
     const q = this.question;
@@ -25,9 +46,13 @@ export class QQuestion {
   };
 
   render() {
+    console.log(this.required);
     return (
       <Host>
-        <h4>{this.question.html}</h4>
+        <h4>
+          {this.question.html}
+          {this.required ? <span class="required">*</span> : ''}
+        </h4>
         {this.Q()}
       </Host>
     );

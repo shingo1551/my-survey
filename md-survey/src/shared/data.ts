@@ -3,19 +3,19 @@ export const survey = {
   questions: [
     {
       type: 'fa',
-      require: false,
+      required: false,
       html: 'question text 1',
       placeholder: 'placeholder',
     },
     {
       type: 'fa',
-      require: true,
+      required: true,
       html: 'question text 2',
       placeholder: 'placeholder',
     },
     {
       type: 'sa',
-      require: false,
+      required: false,
       html: 'question text 3',
       selections: [
         {
@@ -38,7 +38,7 @@ export const survey = {
     },
     {
       type: 'sa',
-      require: true,
+      required: true,
       html: 'question text 4',
       selections: [
         {

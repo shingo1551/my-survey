@@ -29,7 +29,7 @@ export class QSA {
     this.validation();
   };
 
-  validation = () => this.valid.emit(!this.q.require || !!this.n);
+  validation = () => this.valid.emit(!this.q.required || !!this.n);
 
   render() {
     return (

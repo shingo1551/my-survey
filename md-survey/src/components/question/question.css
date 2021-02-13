@@ -1,3 +1,7 @@
 q-fa div {
   margin-bottom: 16px;
 }
+
+span.required {
+  color: red;
+}
