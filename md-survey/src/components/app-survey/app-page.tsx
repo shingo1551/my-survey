@@ -23,7 +23,8 @@ export class AppPage {
   }
 
   onClick = () => {
-    if (state.last) push('/complete');
+    if (this.disabled) return;
+    else if (state.last) push('/complete');
     else push('/page/' + (this.page + 1));
   };
 
