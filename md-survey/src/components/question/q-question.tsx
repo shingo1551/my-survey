@@ -46,7 +46,6 @@ export class QQuestion {
   };
 
   render() {
-    console.log(this.required);
     return (
       <Host>
         <h4>
