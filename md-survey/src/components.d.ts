@@ -9,6 +9,8 @@ import { FA, MA, Question, SA } from "./shared/interface";
 export namespace Components {
     interface AppComplete {
     }
+    interface AppHeader {
+    }
     interface AppHome {
     }
     interface AppPage {
@@ -68,6 +70,12 @@ declare global {
     var HTMLAppCompleteElement: {
         prototype: HTMLAppCompleteElement;
         new (): HTMLAppCompleteElement;
+    };
+    interface HTMLAppHeaderElement extends Components.AppHeader, HTMLStencilElement {
+    }
+    var HTMLAppHeaderElement: {
+        prototype: HTMLAppHeaderElement;
+        new (): HTMLAppHeaderElement;
     };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
@@ -149,6 +157,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "app-complete": HTMLAppCompleteElement;
+        "app-header": HTMLAppHeaderElement;
         "app-home": HTMLAppHomeElement;
         "app-page": HTMLAppPageElement;
         "app-root": HTMLAppRootElement;
@@ -166,6 +175,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppComplete {
+    }
+    interface AppHeader {
     }
     interface AppHome {
     }
@@ -225,6 +236,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "app-complete": AppComplete;
+        "app-header": AppHeader;
         "app-home": AppHome;
         "app-page": AppPage;
         "app-root": AppRoot;
@@ -245,6 +257,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-complete": LocalJSX.AppComplete & JSXBase.HTMLAttributes<HTMLAppCompleteElement>;
+            "app-header": LocalJSX.AppHeader & JSXBase.HTMLAttributes<HTMLAppHeaderElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-page": LocalJSX.AppPage & JSXBase.HTMLAttributes<HTMLAppPageElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
