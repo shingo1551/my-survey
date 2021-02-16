@@ -8,3 +8,7 @@ header div {
   --mdc-ripple-left: 10px; 
   --mdc-ripple-top: 10px;
 }
+
+header section svg {
+  margin: 16px 12px 12px 12px;
+}
