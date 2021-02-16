@@ -27,6 +27,10 @@ export namespace Components {
         "checked": boolean;
         "disabled": boolean;
     }
+    interface MdcIconButton {
+        "disabled": boolean;
+        "label": string;
+    }
     interface MdcRadio {
         "checked": boolean;
         "disabled": boolean;
@@ -113,6 +117,12 @@ declare global {
         prototype: HTMLMdcCheckboxElement;
         new (): HTMLMdcCheckboxElement;
     };
+    interface HTMLMdcIconButtonElement extends Components.MdcIconButton, HTMLStencilElement {
+    }
+    var HTMLMdcIconButtonElement: {
+        prototype: HTMLMdcIconButtonElement;
+        new (): HTMLMdcIconButtonElement;
+    };
     interface HTMLMdcRadioElement extends Components.MdcRadio, HTMLStencilElement {
     }
     var HTMLMdcRadioElement: {
@@ -164,6 +174,7 @@ declare global {
         "app-survey": HTMLAppSurveyElement;
         "mdc-button": HTMLMdcButtonElement;
         "mdc-checkbox": HTMLMdcCheckboxElement;
+        "mdc-icon-button": HTMLMdcIconButtonElement;
         "mdc-radio": HTMLMdcRadioElement;
         "mdc-textarea": HTMLMdcTextareaElement;
         "mdc-textfield": HTMLMdcTextfieldElement;
@@ -193,6 +204,10 @@ declare namespace LocalJSX {
     interface MdcCheckbox {
         "checked"?: boolean;
         "disabled"?: boolean;
+    }
+    interface MdcIconButton {
+        "disabled"?: boolean;
+        "label"?: string;
     }
     interface MdcRadio {
         "checked"?: boolean;
@@ -243,6 +258,7 @@ declare namespace LocalJSX {
         "app-survey": AppSurvey;
         "mdc-button": MdcButton;
         "mdc-checkbox": MdcCheckbox;
+        "mdc-icon-button": MdcIconButton;
         "mdc-radio": MdcRadio;
         "mdc-textarea": MdcTextarea;
         "mdc-textfield": MdcTextfield;
@@ -264,6 +280,7 @@ declare module "@stencil/core" {
             "app-survey": LocalJSX.AppSurvey & JSXBase.HTMLAttributes<HTMLAppSurveyElement>;
             "mdc-button": LocalJSX.MdcButton & JSXBase.HTMLAttributes<HTMLMdcButtonElement>;
             "mdc-checkbox": LocalJSX.MdcCheckbox & JSXBase.HTMLAttributes<HTMLMdcCheckboxElement>;
+            "mdc-icon-button": LocalJSX.MdcIconButton & JSXBase.HTMLAttributes<HTMLMdcIconButtonElement>;
             "mdc-radio": LocalJSX.MdcRadio & JSXBase.HTMLAttributes<HTMLMdcRadioElement>;
             "mdc-textarea": LocalJSX.MdcTextarea & JSXBase.HTMLAttributes<HTMLMdcTextareaElement>;
             "mdc-textfield": LocalJSX.MdcTextfield & JSXBase.HTMLAttributes<HTMLMdcTextfieldElement>;

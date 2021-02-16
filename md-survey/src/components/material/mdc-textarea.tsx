@@ -54,15 +54,3 @@ export class MdcTextArea {
     );
   }
 }
-
-/*
-  <input
-    type="text"
-    class="mdc-text-field__input"
-    ref={el => (this.el = el)}
-    placeholder={this.placeholder}
-    value={this.value}
-    onKeyUp={this.onKeyUp}
-    disabled={this.disabled}
-  />
-*/
