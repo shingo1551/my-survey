@@ -18,7 +18,7 @@ export default {
     copy({
       targets: [
         {
-          src: path.resolve(__dirname, 'node_modules/step3/dist/custom-elements/assets'),
+          src: path.resolve(__dirname, 'node_modules/md-survey/dist/custom-elements/assets'),
           dest: path.resolve(__dirname, 'dist'),
         },
       ],

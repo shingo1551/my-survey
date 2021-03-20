@@ -25,7 +25,6 @@
     "webpack-cli": "^4.4.0"
   },
   "dependencies": {
-    "md-survey": "file:../md-survey",
-    "step3": "file:../md-survey"
+    "md-survey": "file:../md-survey"
   }
 }
