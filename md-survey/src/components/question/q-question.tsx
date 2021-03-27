@@ -11,6 +11,7 @@ export class QQuestion {
   @Prop() name: string;
   @Prop() disabled = false;
   @State() required: boolean;
+  @State() note: string;
 
   componentWillRender() {
     this.init();
@@ -22,12 +23,15 @@ export class QQuestion {
     switch (q.type) {
       case 'fa':
         this.required = q.required;
+        this.note = q.required ? '必須です' : null;
         break;
       case 'sa':
         this.required = q.required;
+        this.note = q.required ? '必須です' : null;
         break;
       case 'ma':
         this.required = !!q.min;
+        this.note = q.min ? `${q.min}以上選択してください` : null;
         break;
     }
   };
@@ -46,6 +50,8 @@ export class QQuestion {
   };
 
   render() {
+    const note = this.disabled ? null : this.note;
+
     return (
       <Host>
         <h4>
@@ -53,6 +59,7 @@ export class QQuestion {
           {this.required ? <span class="required">*</span> : ''}
         </h4>
         {this.Q()}
+        <div class="note">{note}</div>
       </Host>
     );
   }

@@ -5,3 +5,8 @@ q-fa div {
 span.required {
   color: red;
 }
+
+div.note {
+  color: red;
+  margin-left: 8px;
+}
